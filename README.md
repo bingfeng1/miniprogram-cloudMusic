@@ -1,7 +1,8 @@
 # 仿网易云音乐APP
 
 - 主要用于学习小程序开发，微信小程序的组件功能实现
-- 后端是百度查找网易云音乐api发现的：https://github.com/Binaryify/NeteaseCloudMusicApi。我自己在本地建立了一个服务，所以再config.js中是本地ip。本想用config.json。但是小程序在require这种文件是失败的。
+- 后端是百度查找网易云音乐api发现的：https://github.com/Binaryify/NeteaseCloudMusicApi。
+- 我自己在本地建立了以上服务，所以再config.js中是本地ip。本想用config.json。但是小程序在require这种文件是失败的。
 
 ## 首页结构与组件化程度
 - 轮播图：已组件化
