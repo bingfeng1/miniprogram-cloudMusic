@@ -2,6 +2,7 @@
 <swiper indicator-dots autoplay>
   <block wx:for="{{backgroundList}}" wx:key="{{item.id}}">
     <swiper-item>
+      <!-- 目前仅为点击播放 -->
       <image mode="aspectFill" src="{{item.url}}" bindtap="handleSongDetail" data-item="{{item}}"></image>
     </swiper-item>
   </block>

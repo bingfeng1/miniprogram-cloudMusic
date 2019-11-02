@@ -41,13 +41,14 @@ Component({
           return;
         }
         app.globalData.nowMusicId = id
-        // 这里首先获取歌曲的详细信息
+        // 这里首先获取歌曲的详细信息（以后需要做一个抽出）
         let param = {
           url: SONG_DETAIL,
           data: {
             ids: id
           }
         }
+        // 获取歌曲详情信息
         Ajax(param)
           .then(res => {
             console.log(res)
@@ -71,7 +72,7 @@ Component({
               artists,
               imgUrl:picUrl
             })
-
+            // 为了连续then返回一个promise
             return Ajax(param)
           })
           .then(res => {

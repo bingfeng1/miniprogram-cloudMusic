@@ -1,4 +1,4 @@
-<!--components/index-area/index-area.wxml-->
+<!-- components/index-area/index-area.wxml -->
 <!-- 每一个功能块的背景 -->
 <view class="area">
   <view class="flex-between">
@@ -7,10 +7,12 @@
       <text class="sub-title">{{subTitle}}</text>
     </view>
     <view>
-      <slot name="toolbar"/>
+      <!-- 右侧功能模块的插槽 -->
+      <slot name="toolbar" />
     </view>
   </view>
   <view>
-    <slot name="content"/>
+    <!-- 具体内容 -->
+    <slot name="content" />
   </view>
 </view>
