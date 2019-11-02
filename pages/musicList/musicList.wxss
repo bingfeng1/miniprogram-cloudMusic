@@ -1,0 +1,88 @@
+/* pages/musicList.wxss */
+
+.container {
+  background: linear-gradient(rgb(255, 110, 110), rgb(255, 173, 173));
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  padding: 20rpx;
+  color: white;
+}
+
+/* 专辑照片 */
+
+.cover image {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+/* 专辑详情 */
+
+.details {
+  padding-left: 20rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.artists {
+  font-size: 30rpx;
+}
+
+.publish, .description {
+  font-size: 24rpx;
+}
+
+.publish {
+  padding-top: 120rpx;
+}
+
+.description {
+  width: 400rpx;
+}
+
+/* 内容列表 */
+
+.content {
+  padding: 20rpx;
+  background: white;
+  color: black;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+}
+
+.control .iconfont {
+  font-size: 50rpx;
+}
+
+.iconfont>text {
+  font-size: 30rpx;
+  padding-left: 10rpx;
+}
+
+.index {
+  font-size: 40rpx;
+  color: gray;
+  margin: 18rpx;
+  display: inline-block;
+}
+
+.song-detail{
+  padding-left: 26rpx;
+}
+
+.song-name {
+  font-size: 30rpx;
+}
+
+.song-artists {
+  font-size: 20rpx;
+}

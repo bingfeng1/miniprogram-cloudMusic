@@ -1,0 +1,10 @@
+<!--components/content-item/content-item.wxml-->
+<view class="flex">
+  <block wx:for="{{itemList}}" wx:key="{{index}}">
+    <view class="item" style="width:calc(600rpx / {{flexNum}})" bindtap="handleShow" data-id="{{item.id}}">
+      <image src="{{item.imageUrl}}" mode="aspectFit" style="width:calc(600rpx / {{flexNum}});height:calc(600rpx / {{flexNum}})" />
+      <view class="item-title text-overflow">{{item.name}}</view>
+      <view class="item-name">{{item.artist}}</view>
+    </view>
+  </block>
+</view>

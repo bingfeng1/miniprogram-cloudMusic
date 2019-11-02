@@ -1,0 +1,23 @@
+/* components/content-item/content-item.wxss */
+
+/* 每个区域块的内容 */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  font-size: 30rpx;
+}
+
+.flex>.item image {
+  border-radius: 10rpx;
+}
+
+.item-title {
+  font-size: 24rpx;
+}
+
+.item-name {
+  font-size: 22rpx;
+  color: rgb(189, 189, 189);
+}

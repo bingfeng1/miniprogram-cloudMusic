@@ -1,0 +1,28 @@
+/* components/index-area/index-area.wxss */
+/* 每个主要区域 */
+.area{
+  padding: 40rpx;
+  border-bottom: 10rpx solid rgb(233, 233, 233);
+  border-radius: 20rpx;
+}
+
+.title{
+  font-size: 40rpx;
+  font-weight: 700;
+  letter-spacing: 10rpx;
+}
+
+.sub-title{
+  color: rgb(180, 180, 180);
+  align-self: flex-end;
+  line-height: 40rpx;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+button{
+  border-radius: 50rpx;
+}

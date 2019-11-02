@@ -1,0 +1,8 @@
+<!--components/index/banner/banner.wxml-->
+<swiper indicator-dots autoplay>
+  <block wx:for="{{backgroundList}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <image mode="aspectFill" src="{{item.url}}" bindtap="handleSongDetail" data-item="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>

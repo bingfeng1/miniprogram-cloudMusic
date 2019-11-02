@@ -1,0 +1,23 @@
+/**app.wxss**/
+@import '/assets/css/weui.wxss';
+@import '/assets/icon/iconfont.wxss';
+
+/* 单行多出为... */
+
+.text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 两行多出为... */
+
+.text-overflow2 {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

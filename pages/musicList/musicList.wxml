@@ -1,0 +1,43 @@
+<!--pages/musicList.wxml-->
+<!-- 标题 -->
+<view class="container">
+  <view class="flex header">
+    <!-- 图片大小 -->
+    <view class="cover">
+      <image src="{{picUrl}}" />
+    </view>
+    <!-- 内容详情 -->
+    <view class="details">
+      <view class="title">{{name}}</view>
+      <view class="artists">{{artistsStr}}</view>
+      <view class="publish">{{publishTime}}</view>
+      <view class="description text-overflow">{{description}}</view>
+    </view>
+  </view>
+
+
+  <!-- 歌曲列表 -->
+  <view class="content">
+    <view class="flex control">
+      <view class="flex iconfont icon-start">
+        <text>播放全部</text>
+      </view>
+    </view>
+    <view class="songList">
+      <block wx:for="{{songs}}" wx:key="{{item.id}}">
+        <view class="flex" bindtap="handleBackgoundAudio" data-id="{{item.id}}">
+          <view class="flex">
+            <text class="index">{{index+1}}</text>
+            <view class="song-detail">
+              <view class="song-name">{{item.name}}</view>
+              <view class="song-artists">{{artistsStr}}</view>
+            </view>
+          </view>
+          <view>
+
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

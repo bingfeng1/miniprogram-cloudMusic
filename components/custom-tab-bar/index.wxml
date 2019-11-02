@@ -1,0 +1,10 @@
+<!--components/custom-tab-bar/index.wxml-->
+<view class="tabs">
+  <block wx:for="{{tabList}}" wx:key="{{index}}">
+    <view class="tab {{index == currentIndex && 'checked'}}" bindtap="handleSwitchTab" data-index="{{index}}">
+      <view class="iconfont {{item.icon}}">
+        <view class="text">{{item.title}}</view>
+      </view>
+    </view>
+  </block>
+</view>

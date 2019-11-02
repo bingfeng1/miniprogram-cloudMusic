@@ -1,0 +1,10 @@
+<!--components/index/menu_item/menu_item.wxml-->
+<view class="tabs">
+  <block wx:for="{{tabList}}" wx:key="{{index}}">
+    <view class="tab" bindtap="handleNavigate" data-index="{{index}}">
+      <view class="iconfont {{item.icon}}">
+      </view>
+      <view class="text">{{item.title}}</view>
+    </view>
+  </block>
+</view>
