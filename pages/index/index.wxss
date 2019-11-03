@@ -1,4 +1,19 @@
 /**index.wxss**/
+/* 将轮播变小一点 */
+.banner{
+  background:linear-gradient(#d32f2e 40%,white 40% 100%);
+}
+.flex{
+  display: flex;
+  justify-content: center;
+}
+.banner-mini{
+  width: 700rpx;
+}
+
+.banner-mini image{
+  border-radius: 10rpx;
+}
 
 .checked {
   color: red;

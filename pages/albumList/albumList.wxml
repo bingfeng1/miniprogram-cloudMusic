@@ -1,0 +1,8 @@
+<!-- pages/albumList/albumList.wxml -->
+<view>
+    <m-area title="本周新碟">
+        <view slot="content">
+            <m-area-item text-overflow="text-overflow" flex-num="2" item-list="{{albumList}}" item-title="本周新碟" />
+        </view>
+    </m-area>
+</view>

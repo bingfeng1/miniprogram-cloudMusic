@@ -1,28 +1,28 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
   <!-- 轮播图 -->
-  <view>
-    <m-banner backgroundList="{{backgroundList}}" />
+  <view class="banner flex">
+    <view class="banner-mini">
+      <m-banner backgroundList="{{backgroundList}}" />
+    </view>
   </view>
   <!-- 开始的菜单栏 -->
   <view>
     <m-item tabList="{{menuList}}" />
   </view>
-
   <!-- 主体展示区域 -->
   <view style="margin-bottom:120rpx;">
     <block wx:for="{{areaList}}" wx:for-item="areaId" wx:for-item="area" wx:key="{{areaId}}">
       <m-area title="{{area.title}}" sub-title="{{area.sub_title}}">
         <view slot="toolbar">
-          <button size="mini">{{area.tool}}</button>
+          <button size="mini" bindtap="handleTool" data-tool="{{area.id}}">{{area.tool}}</button>
         </view>
         <view slot="content">
-          <m-area-item text-overflow="text-overflow" flex-num="3" item-list="{{area.list}}" item-title="{{area.title}}"/>
+          <m-area-item text-overflow="text-overflow" flex-num="3" item-list="{{area.list}}" item-title="{{area.title}}" />
         </view>
       </m-area>
     </block>
   </view>
-
   <!-- 固定tab切换（自定义） -->
-  <my-bar/>
+  <my-bar />
 </view>

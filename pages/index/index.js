@@ -5,7 +5,7 @@ const {
 const {
   PLAYLIST_HOT,
   BANNER,
-  ALBUMS
+  NEWEST_ALBUMS
 } = require('../../utils/route_str.js')
 
 //获取应用实例
@@ -25,7 +25,7 @@ Page({
     backgroundList: [],
     // 主页每一栏的区域
     areaList: [{
-      id: ALBUMS,
+      id: NEWEST_ALBUMS,
       title: "新碟",
       sub_title: "新歌",
       list: [],
@@ -35,7 +35,7 @@ Page({
   onLoad() {
     // this.getPlaylistHot()
     this.getBannerList()
-    this.getALBUMS();
+    this.getNewestAlbums();
   },
   // 获取轮播图
   getBannerList() {
@@ -64,12 +64,9 @@ Page({
     console.log(event)
   },
   // 获取新碟
-  getALBUMS() {
+  getNewestAlbums() {
     const param = {
-      url: ALBUMS,
-      data: {
-        limit: 6
-      }
+      url: NEWEST_ALBUMS,
     }
     Ajax(param)
       .then(res => {
@@ -86,7 +83,7 @@ Page({
           })
         }
         let areaIndex = this.data.areaList.findIndex(obj => {
-          return obj.id = ALBUMS
+          return obj.id = NEWEST_ALBUMS
         })
         this.setData({
           [`areaList[${areaIndex}].list`]: temp
@@ -102,5 +99,15 @@ Page({
       .then(res => {
         console.log(res)
       })
+  },
+  // 每个区域的单独空间
+  handleTool(options){
+    const tool = options.currentTarget.dataset.tool
+    // 如果是表示更多专辑
+    if(tool == NEWEST_ALBUMS){
+      wx.navigateTo({
+        url:'/pages/albumList/albumList'
+      })
+    }
   }
 })

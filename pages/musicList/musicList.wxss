@@ -1,9 +1,5 @@
 /* pages/musicList.wxss */
 
-.container {
-  background: linear-gradient(rgb(255, 110, 110), rgb(255, 173, 173));
-}
-
 .flex {
   display: flex;
   justify-content: space-between;
@@ -13,6 +9,16 @@
 .header {
   padding: 20rpx;
   color: white;
+}
+
+/* 模糊背景图片 */
+.blur-bg {
+  position: fixed;
+  top: -50rpx;
+  left: -50rpx;
+  width: 800vw;
+  z-index: -1;
+  filter: blur(50rpx);
 }
 
 /* 专辑照片 */
@@ -37,7 +43,8 @@
   font-size: 30rpx;
 }
 
-.publish, .description {
+.publish,
+.description {
   font-size: 24rpx;
 }
 
@@ -63,7 +70,7 @@
   font-size: 50rpx;
 }
 
-.iconfont>text {
+.iconfont > text {
   font-size: 30rpx;
   padding-left: 10rpx;
 }
@@ -75,7 +82,7 @@
   display: inline-block;
 }
 
-.song-detail{
+.song-detail {
   padding-left: 26rpx;
 }
 
