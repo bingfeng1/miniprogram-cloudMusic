@@ -82,6 +82,11 @@
   display: inline-block;
 }
 
+.iconfont {
+  font-size: 58rpx;
+  margin: 0px;
+}
+
 .song-detail {
   padding-left: 26rpx;
 }

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/musicList/musicList",
-    "pages/albumList/albumList"
+    "pages/albumList/albumList",
+    "pages/lyric/lyric"
   ],
   "window": {
     "backgroundTextStyle": "light",

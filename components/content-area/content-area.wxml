@@ -2,7 +2,7 @@
 <!-- 每一个功能块的背景 -->
 <view class="area">
   <view class="flex-between">
-    <view>
+    <view style="margin-bottom:20rpx;">
       <text class="title">{{title}}</text>
       <text class="sub-title">{{subTitle}}</text>
     </view>

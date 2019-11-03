@@ -20,13 +20,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     let {
       id,
       title
     } = options
     // 设置微信标题
-    wx.setNavigationBarTitle({title})
+    wx.setNavigationBarTitle({ title })
     let param = {
       url: ALBUM,
       data: {
@@ -53,14 +53,17 @@ Page({
             name: v.name
           }
         })
-        let artistsStr = "歌手："+artists.map(v => v.name).join(' / ')
+        let artistsStr = "歌手：" + artists.map(v => v.name).join(' / ')
         publishTime = formatDate(publishTime)
         // 歌曲信息
         let songs = res.data.songs.map(v => {
-          return {
+          let tempObj = {
             id: v.id,
             name: v.name
           }
+          // 判断本歌曲是否正在播放
+          tempObj.play = v.id == app.globalData.nowMusicId
+          return tempObj
         })
         this.setData({
           artists,
@@ -79,57 +82,61 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
   handleBackgoundAudio(options) {
     let id = options.currentTarget.dataset.id
+    // 如何相同，那么跳转至歌曲详细播放页面
     if (id == app.globalData.nowMusicId) {
-      return;
+      wx.navigateTo({
+        url:`/pages/lyric/lyric?id=${id}`
+      })
     }
     app.globalData.nowMusicId = id
+    app.globalData.musicData = this.data;
     let param = {
       url: SONG_URL,
       data: {
@@ -138,6 +145,7 @@ Page({
     }
     Ajax(param)
       .then(res => {
+        console.log(res)
         let songUrlList = res.data.data.map(v => v.url)
         let bgm = wx.getBackgroundAudioManager()
         bgm.title = this.data.name
@@ -146,7 +154,22 @@ Page({
         bgm.coverImgUrl = this.data.picUrl
         // 设置了 src 之后会自动播放，这里只是点击单曲，所以直接获取第一个就行
         bgm.src = songUrlList[0]
-      })
+        // 设置为播放状态
 
+        let tempSongs = [...this.data.songs].map(v => {
+          let tempObj = {
+            id: v.id,
+            name: v.name
+          }
+          // 判断本歌曲是否正在播放
+          tempObj.play = v.id == app.globalData.nowMusicId
+          return tempObj
+        })
+
+        this.setData({
+          songs: tempSongs
+        })
+
+      })
   }
 })

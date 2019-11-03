@@ -26,7 +26,8 @@
       <block wx:for="{{songs}}" wx:key="{{item.id}}">
         <view class="flex" bindtap="handleBackgoundAudio" data-id="{{item.id}}">
           <view class="flex">
-            <text class="index">{{index+1}}</text>
+            <text class="index" wx:if="{{!item.play}}">{{index+1}}</text>
+            <text wx:else class="iconfont icon-start"></text>
             <view class="song-detail">
               <view class="song-name">{{item.name}}</view>
               <view class="song-artists">{{artistsStr}}</view>

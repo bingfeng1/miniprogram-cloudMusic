@@ -12,6 +12,8 @@ const ALBUM = "/album"
 const SONG_URL = "/song/url"
 // 获取音乐详情
 const SONG_DETAIL = "/song/detail"
+// 获取音乐歌词
+const LYRIC = "/lyric"
 
 module.exports = {
   PLAYLIST_HOT,
@@ -20,5 +22,6 @@ module.exports = {
   ALBUMS,
   ALBUM,
   SONG_URL,
-  SONG_DETAIL
+  SONG_DETAIL,
+  LYRIC
 }

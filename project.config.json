@@ -56,6 +56,12 @@
 					"pathName": "pages/musicList/musicList",
 					"query": "id=82851821",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/albumList/albumList",
+					"pathName": "pages/albumList/albumList",
+					"scene": null
 				}
 			]
 		}

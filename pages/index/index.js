@@ -83,7 +83,7 @@ Page({
           })
         }
         let areaIndex = this.data.areaList.findIndex(obj => {
-          return obj.id = NEWEST_ALBUMS
+          return obj.id == NEWEST_ALBUMS
         })
         this.setData({
           [`areaList[${areaIndex}].list`]: temp
