@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -61,6 +61,14 @@
 					"id": -1,
 					"name": "pages/albumList/albumList",
 					"pathName": "pages/albumList/albumList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/lyric/lyric",
+					"pathName": "pages/lyric/lyric",
+					"query": "id=1398247728",
 					"scene": null
 				}
 			]

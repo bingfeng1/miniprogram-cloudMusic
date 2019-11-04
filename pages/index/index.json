@@ -2,8 +2,8 @@
   "usingComponents": {
     "m-item":"/components/index/menu_item/menu_item",
     "m-banner": "/components/index/banner/banner",
-    "m-area": "/components/content-area/content-area",
-    "m-area-item": "/components/content-item/content-item"
+    "m-area": "/components/common/content-area/content-area",
+    "m-area-item": "/components/common/content-item/content-item"
   },
   "enablePullDownRefresh":true
 }

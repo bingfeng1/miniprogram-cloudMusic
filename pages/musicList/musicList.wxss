@@ -11,16 +11,6 @@
   color: white;
 }
 
-/* 模糊背景图片 */
-.blur-bg {
-  position: fixed;
-  top: -50rpx;
-  left: -50rpx;
-  width: 800vw;
-  z-index: -1;
-  filter: blur(50rpx);
-}
-
 /* 专辑照片 */
 
 .cover image {

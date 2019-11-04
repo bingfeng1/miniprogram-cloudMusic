@@ -1,2 +1,29 @@
-<!--pages/lyric/lyric.wxml-->
-
+<!-- pages/lyric/lyric.wxml -->
+<!-- 背景图片（模糊） -->
+<img-blur src="{{musicData.picUrl}}" />
+<view class="container">
+    <!-- 歌词 -->
+    <view wx:if="{{show}}" class="main" bindtap="hideLyric">
+        <scroll-view scroll-y="{{true}}" style="height:80vh"  scroll-into-view="lyric">
+            <view id="lyric">
+                <view class="line"></view>
+                <view class="lyric" style="transform:translateY({{lyricTop}});font-size:{{lyricFontSize}}rpx">
+                    <block wx:for="{{lyricMap}}" wx:key="{{item[0]}}">
+                        <view data-time="{{item[0]}}">
+                            <text decode>{{item[1]}}</text>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 中间圆形动画 -->
+    <view wx:else class="main" animation="{{animationData}}" bindtap="showLyric">
+        <image src="{{musicData.picUrl}}" />
+    </view>
+    <!-- 控制 -->
+    <view class="tools">
+        <view wx:if="{{isplay}}" class="iconfont icon-pause" bindtap="pause"></view>
+        <view wx:else class="iconfont icon-start" bindtap="start"></view>
+    </view>
+</view>

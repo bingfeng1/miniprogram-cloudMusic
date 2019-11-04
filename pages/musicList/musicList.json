@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "img-blur":"/components/common/img-blur/img-blur"
+  }
 }

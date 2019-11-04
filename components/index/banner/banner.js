@@ -78,7 +78,7 @@ Component({
           .then(res => {
             console.log(res)
             let songUrlList = res.data.data.map(v => v.url)
-            let bgm = wx.getBackgroundAudioManager()
+            let bgm = app.globalData.bgm
             bgm.title = this.data.title
             bgm.epname = this.data.title
             bgm.singer = this.data.artists

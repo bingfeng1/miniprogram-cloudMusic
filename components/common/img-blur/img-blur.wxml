@@ -1,0 +1,5 @@
+<!-- components/common/img-blur/img-blur.wxml -->
+<!-- 将图片模糊化 -->
+<view class="stop-overflow" style="width:{{width}};height:{{height}}">
+    <image src="{{src}}" class="blur-bg" mode="aspectFill"/>
+</view>

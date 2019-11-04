@@ -132,8 +132,9 @@ Page({
     // 如何相同，那么跳转至歌曲详细播放页面
     if (id == app.globalData.nowMusicId) {
       wx.navigateTo({
-        url:`/pages/lyric/lyric?id=${id}`
+        url: `/pages/lyric/lyric?id=${id}`
       })
+      return;
     }
     app.globalData.nowMusicId = id
     app.globalData.musicData = this.data;
@@ -147,7 +148,7 @@ Page({
       .then(res => {
         console.log(res)
         let songUrlList = res.data.data.map(v => v.url)
-        let bgm = wx.getBackgroundAudioManager()
+        let bgm = app.globalData.bgm
         bgm.title = this.data.name
         bgm.epname = this.data.name
         bgm.singer = this.data.artistsStr

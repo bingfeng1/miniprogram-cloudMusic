@@ -31,6 +31,7 @@
     ]
   },
   "usingComponents": {
-    "my-bar": "/components/custom-tab-bar/index"
-  }
+    "my-bar": "/components/common/custom-tab-bar/index"
+  },
+  "requiredBackgroundModes": ["audio"]
 }

@@ -1,1 +1,63 @@
 /* pages/lyric/lyric.wxss */
+
+/* 因为是满屏所以可以直接设置死的高度 */
+.main {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main > image {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+}
+
+.main > image::before {
+  content: "";
+  border-radius: 50%;
+  width: 600rpx;
+  height: 600rpx;
+  background: linear-gradient(black 30%, rgb(24, 24, 24) 50%, black 70%);
+  position: absolute;
+  z-index: -1;
+  margin-left: -100rpx;
+  margin-top: -100rpx;
+}
+
+/* 歌词中间线 */
+.line {
+  position: fixed;
+  top: 40vh;
+  border: 1rpx solid white;
+  width: 100vw;
+}
+.line::before {
+  content: "";
+  display: inline-block;
+  position: fixed;
+  top: calc(40vh - 20rpx);
+  left: 0;
+  border-width: 20rpx;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+}
+
+.lyric view {
+  text-align: center;
+  color: white;
+}
+
+/* 控制音乐按钮 */
+.tools {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid white;
+}
+
+.icon-start,
+.icon-pause {
+  color: white;
+  font-size: 150rpx;
+}

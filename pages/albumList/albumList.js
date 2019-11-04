@@ -2,7 +2,7 @@
 const { Ajax } = require('../../utils/plugin')
 const { ALBUMS } = require('../../utils/route_str')
 // 每页数据数量
-const limit = 20
+const { ALBUM_LIST_LIMIT } = require('../../config')
 Page({
 
   /**
@@ -73,8 +73,8 @@ Page({
     let param = {
       url: ALBUMS,
       data: {
-        offset: offset * limit,
-        limit
+        offset: offset * ALBUM_LIST_LIMIT,
+        limit: ALBUM_LIST_LIMIT
       }
     }
     Ajax(param)

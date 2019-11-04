@@ -1,8 +1,8 @@
 <!-- pages/musicList.wxml -->
 <!-- 标题 -->
+<img-blur src="{{picUrl}}" height="400rpx"></img-blur>
 <view class="container">
   <view class="flex header">
-    <image src="{{picUrl}}" class="blur-bg" mode="left" />
     <!-- 图片大小 -->
     <view class="cover">
       <image src="{{picUrl}}" />
