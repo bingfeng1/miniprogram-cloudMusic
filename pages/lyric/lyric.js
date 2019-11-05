@@ -14,7 +14,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // rotate: MUSIC_ROTATE, // 唱盘旋转角度
+    rotate: MUSIC_ROTATE, // 唱盘旋转角度
     isplay: true, // 是否正在播放
     show: false,  //是否显示歌词
     lyricTop: '40vh',
