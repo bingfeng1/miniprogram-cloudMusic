@@ -1,0 +1,9 @@
+<!--pages/mvPlay/mvPlay.wxml-->
+<view class="flex">
+    <video id="video" src="{{mvDetail.brs[480]}}" autoplay></video>
+    <block wx:if="{{mvDetail}}">
+        <view class="h3">MV介绍</view>
+        <view class="time">发布时间：{{mvDetail.publishTime}}</view>
+        <view class="desc">简介：{{mvDetail.desc}}</view>
+    </block>
+</view>

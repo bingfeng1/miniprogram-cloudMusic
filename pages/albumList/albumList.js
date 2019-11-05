@@ -11,16 +11,14 @@ Page({
   data: {
     // 分页偏移量
     offset: 0,
-    albumList: []
+    albumList: [],
+    switchUrl:"musicList"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      switchUrl:"musicList"
-    })
     this.getAlbumList(this.data.offset)
   },
 

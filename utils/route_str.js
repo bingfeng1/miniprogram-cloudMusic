@@ -19,6 +19,8 @@ const LYRIC = "/lyric"
 const PERSONALIZED = "/personalized"
 // 获取MV排行
 const TOP_MV = "/top/mv"
+// 获取MV详情
+const MV_DETAIL = "/mv/detail"
 
 module.exports = {
   PLAYLIST_HOT,
@@ -30,5 +32,6 @@ module.exports = {
   SONG_DETAIL,
   LYRIC,
   PERSONALIZED,
-  TOP_MV
+  TOP_MV,
+  MV_DETAIL
 }

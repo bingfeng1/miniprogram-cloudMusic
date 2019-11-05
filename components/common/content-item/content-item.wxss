@@ -15,6 +15,7 @@
 
 .flex>.item image {
   border-radius: 10rpx;
+  background:black;
 }
 
 .item-title {

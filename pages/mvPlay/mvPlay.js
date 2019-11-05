@@ -1,24 +1,21 @@
-// pages/top-mv/top-mv.js
+// pages/mvPlay/mvPlay.js
 const { Ajax } = require('../../utils/plugin')
-const { TOP_MV } = require('../../utils/route_str')
-// 每页数据数量
-const { ALBUM_LIST_LIMIT } = require('../../config')
+const { MV_DETAIL } = require('../../utils/route_str')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    switchUrl: "mvPlay",
-    offset: 0,
-    mvList: []
+    mvDetail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMV(this.data.offset)
+    let { id } = options
+    this.getMvDetail(id)
   },
 
   /**
@@ -60,7 +57,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getMV(this.data.offset)
+
   },
 
   /**
@@ -69,33 +66,29 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getMV(offset) {
+  getMvDetail(id) {
     let param = {
-      url: TOP_MV,
+      url: MV_DETAIL,
       data: {
-        offset: offset * ALBUM_LIST_LIMIT,
-        limit: ALBUM_LIST_LIMIT
+        mvid: id
       }
     }
     Ajax(param)
       .then(res => {
-        // 深拷贝
-        let temp = [...this.data.mvList];
-        let data = res.data.data;
-        for (let v of data) {
-          let artists = v.artists.map(w => w.name).join(" / ")
-
-          temp.push({
-            imageUrl: v.cover,
-            name: v.name,
-            artist: artists,
-            id: v.id
-          })
-        }
+        console.log(res)
+        let { id, name, desc, publishTime, brs, artists } = res.data.data;
+        let artistStr = artists.map(w => w.name).join(" / ")
 
         this.setData({
-          mvList: temp,
-          offset: this.data.offset + 1
+          mvDetail: {
+            id,
+            name,
+            desc,
+            publishTime,
+            brs,
+            artists,
+            artistStr
+          }
         })
       })
   }

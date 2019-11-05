@@ -1,2 +1,8 @@
 <!--pages/top-mv/top-mv.wxml-->
-<text>pages/top-mv/top-mv.wxml</text>
+<view>
+    <m-area title="MV">
+        <view slot="content">
+            <m-area-item text-overflow="text-overflow" flex-num="2" item-list="{{mvList}}" switchUrl="{{switchUrl}}"/>
+        </view>
+    </m-area>
+</view>
