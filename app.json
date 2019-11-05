@@ -4,7 +4,10 @@
     "pages/mine/mine",
     "pages/musicList/musicList",
     "pages/albumList/albumList",
-    "pages/lyric/lyric"
+    "pages/lyric/lyric",
+    "pages/pers-gedan/pers-gedan",
+    "pages/top-mv/top-mv",
+    "pages/musicList-gedan/musicList-gedan"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,5 +36,7 @@
   "usingComponents": {
     "my-bar": "/components/common/custom-tab-bar/index"
   },
-  "requiredBackgroundModes": ["audio"]
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }

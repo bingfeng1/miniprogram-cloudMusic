@@ -15,9 +15,11 @@ Page({
   data: {
     // 主页菜单
     menuList: [{
-      title: '热门歌单',
+      id:"pers-gedan",
+      title: '推荐歌单',
       icon: 'icon-gedan'
     }, {
+      id:"top-mv",
       title: 'MV',
       icon: 'icon-mv'
     }],
@@ -30,7 +32,8 @@ Page({
       sub_title: "新歌",
       list: [],
       tool: "更多新碟"
-    }]
+    }],
+    switchUrl:"musicList"
   },
   onLoad() {
     // this.getPlaylistHot()
@@ -109,5 +112,13 @@ Page({
         url:'/pages/albumList/albumList'
       })
     }
+  },
+  // 点击图标切换事件
+  switchPage(options){
+    let index = options.detail.index
+    let nowSelect = this.data.menuList[index]
+    wx.navigateTo({
+      url:`/pages/${nowSelect.id}/${nowSelect.id}`
+    })
   }
 })

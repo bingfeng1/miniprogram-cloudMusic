@@ -9,6 +9,10 @@
   font-size: 30rpx;
 }
 
+.item{
+  margin-bottom: 40rpx;
+}
+
 .flex>.item image {
   border-radius: 10rpx;
 }

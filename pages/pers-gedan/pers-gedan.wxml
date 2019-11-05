@@ -1,0 +1,8 @@
+<!--pages/pers-gedan/pers-gedan.wxml-->
+<view>
+    <m-area title="推荐歌单">
+        <view slot="content">
+            <m-area-item text-overflow="text-overflow" flex-num="2" item-list="{{gedan}}" switchUrl="{{switchUrl}}"/>
+        </view>
+    </m-area>
+</view>

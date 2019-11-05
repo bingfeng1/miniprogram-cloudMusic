@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "m-area":"/components/common/content-area/content-area",
+    "m-area-item": "/components/common/content-item/content-item"
+  },
+  "onReachBottomDistance":50
+}

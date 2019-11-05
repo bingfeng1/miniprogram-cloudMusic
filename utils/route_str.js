@@ -15,6 +15,11 @@ const SONG_DETAIL = "/song/detail"
 // 获取音乐歌词
 const LYRIC = "/lyric"
 
+// 获取推荐歌单
+const PERSONALIZED = "/personalized"
+// 获取MV排行
+const TOP_MV = "/top/mv"
+
 module.exports = {
   PLAYLIST_HOT,
   BANNER,
@@ -23,5 +28,7 @@ module.exports = {
   ALBUM,
   SONG_URL,
   SONG_DETAIL,
-  LYRIC
+  LYRIC,
+  PERSONALIZED,
+  TOP_MV
 }

@@ -2,7 +2,7 @@
 <view>
     <m-area title="全部新碟">
         <view slot="content">
-            <m-area-item text-overflow="text-overflow" flex-num="2" item-list="{{albumList}}" item-title="新碟" />
+            <m-area-item text-overflow="text-overflow" flex-num="2" item-list="{{albumList}}" item-title="新碟" switchUrl="{{switchUrl}}"/>
         </view>
     </m-area>
 </view>

@@ -1,7 +1,7 @@
-// pages/albumList/albumList.js
+// pages/pers-gedan/pers-gedan.js
 const { Ajax } = require('../../utils/plugin')
-const { ALBUMS } = require('../../utils/route_str')
-// 每页数据数量
+const { PERSONALIZED } = require('../../utils/route_str')
+// 每页数据数量(推荐歌单，没有offset所以就是固定值)
 const { ALBUM_LIST_LIMIT } = require('../../config')
 Page({
 
@@ -9,19 +9,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 分页偏移量
-    offset: 0,
-    albumList: []
+    gedan: [],
+    switchUrl:"musicList-gedan"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      switchUrl:"musicList"
-    })
-    this.getAlbumList(this.data.offset)
+    this.getPersGeDan()
   },
 
   /**
@@ -63,7 +59,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getAlbumList(this.data.offset)
+
   },
 
   /**
@@ -72,33 +68,28 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getAlbumList(offset) {
+  getPersGeDan() {
     let param = {
-      url: ALBUMS,
+      url: PERSONALIZED,
       data: {
-        offset: offset * ALBUM_LIST_LIMIT,
         limit: ALBUM_LIST_LIMIT
       }
     }
     Ajax(param)
       .then(res => {
         // 深拷贝
-        let temp = [...this.data.albumList];
-        let data = res.data.albums;
+        let temp = [];
+        let data = res.data.result;
         for (let v of data) {
-          let artists = v.artists.map(w => w.name).join(" / ")
-
           temp.push({
             imageUrl: v.picUrl,
             name: v.name,
-            artist: artists,
-            id: v.id
+            id: v.id  //歌单id
           })
         }
 
         this.setData({
-          albumList: temp,
-          offset: this.data.offset + 1
+          gedan: temp
         })
       })
   }

@@ -15,6 +15,10 @@ Component({
     itemTitle:{
       type:String,
       value:""
+    },
+    switchUrl:{
+      type:String,
+      value:""
     }
   },
 
@@ -32,7 +36,7 @@ Component({
     handleShow(event) {
       let id = event.currentTarget.dataset.id
       // 跳至歌曲列表页面
-      let url = `/pages/musicList/musicList?id=${id}&title=${this.properties.itemTitle}`
+      let url = `/pages/${this.properties.switchUrl}/${this.properties.switchUrl}?id=${id}&title=${this.properties.itemTitle}`
       wx.navigateTo({
         url,
       })

@@ -8,7 +8,7 @@
   </view>
   <!-- 开始的菜单栏 -->
   <view>
-    <m-item tabList="{{menuList}}" />
+    <m-item tabList="{{menuList}}" bind:switchPage="switchPage"/>
   </view>
   <!-- 主体展示区域 -->
   <view style="margin-bottom:120rpx;">
@@ -18,7 +18,7 @@
           <button size="mini" bindtap="handleTool" data-tool="{{area.id}}">{{area.tool}}</button>
         </view>
         <view slot="content">
-          <m-area-item text-overflow="text-overflow" flex-num="3" item-list="{{area.list}}" item-title="{{area.title}}" />
+          <m-area-item text-overflow="text-overflow" flex-num="3" item-list="{{area.list}}" item-title="{{area.title}}"  switchUrl="{{switchUrl}}"/>
         </view>
       </m-area>
     </block>
